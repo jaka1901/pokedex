@@ -1,0 +1,49 @@
+$types: (
+    normal: #CBC9AC,
+    fighting: #E00024,
+    flying: #69BAB2,
+    poison: #A311D3,
+    ground: #DFD163,
+    rock: #766A41,
+    bug: #BFDD76,
+    ghost: #8B54A2,
+    steel: #7D8E8A,
+    fire: #EF7D27,
+    water: #267AB9,
+    grass: #499820,
+    electric: #FEFA46,
+    psychic: #E40064,
+    ice: #3296A0,
+    dragon: #8854F8,
+    dark: #7D8E8A,
+    fairy: #F99FC1,
+    unknown: #ccc,
+    shadow: #999
+);
+
+@each $key, $value in $types {
+    .bg-lighter-#{$key} {
+        background-color: rgba(lighten($value, 5%), .5);
+    }
+    .bg-#{$key} {
+        background-color: rgba(lighten($value, 5%), .5);
+    }
+    .bg-darker-#{$key} {
+        background-color: darken($value, 8%);
+    }
+}
+
+@for $size from 5 through 50 {
+	.font-#{$size} {
+		font-size: #{$size}px;
+	}
+	.radius-#{$size}{
+		border-radius: #{$size}px;
+	}
+
+    @media screen and (max-width: 480px){
+        .font-xs-#{$size}{
+            font-size: #{$size}px !important;
+        }
+    }
+}
